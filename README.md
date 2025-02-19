@@ -9,9 +9,13 @@ Initial hypothesis is that higher income level would lead to higher level of sel
 does the educational level affect ones' political ideology? 
 
 # Origin of dataset
-GSS.xlsx is the original dataset that is extracted from gss.org with 7 variables mentioned above. Update code is the 
-code for the analysis.
+GSS.xlsx is the original dataset that is extracted from gss.org with 7 variables mentioned above. Update code is the code for the EDA analysis, graph generation, and python code.
 
+# Results and interpertation
+For the first hypothesis, the result shows that there is only a slight correlation between income and happiness. The correlation between family income and happiness level is limited and only 0.153 which shows a weak correlation.
+For the second hypothsis, as education level increases, the political views tend to be more liberal. As income level decreases, the political views tend to lean toward Moderate or being Conservative. The general trend of the data is that happiness level tend to be Very happy among the individuals with stable income level and higher education. 
+
+# Conclusion
 
 The conclusion that can be drawn from the data analysis is that higher income correlates with increased happiness. However,
 unlike the initial hypothesis which is there would be a stronger relationship between income level and happiness, the data
