@@ -6,3 +6,10 @@ df = pd.read_excel("GSS.xlsx")
 
 cleaned_gss = df.dropna()
 cleaned_gss["happy_numeric"] = cleaned_gss["happy"].,ap({"Not too happy":1,"Pretty happy":2,"Very happy":3})
+
+# Create scatter plot: Income vs. Happiness
+sns.scatterplot(x=cleaned_gss["realinc"], y=cleaned_gss["happy_numeric']
+plt.xlabel("Income (USD)")
+plt.ylabel("Happiness Level (1=Not too happy, 3=Very happy)")
+plt.title("Income vs. Happiness")
+plt.show()
