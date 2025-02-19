@@ -1,0 +1,8 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seabodn as sns
+
+df = pd.read_excel("GSS.xlsx")
+
+cleaned_gss = df.dropna()
+cleaned_gss["happy_numeric"] = cleaned_gss["happy"].,ap({"Not too happy":1,"Pretty happy":2,"Very happy":3})
