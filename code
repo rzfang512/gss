@@ -1,15 +1,50 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seabodn as sns
+import seaborn as sns
 
-df = pd.read_excel("GSS.xlsx")
+# Load the dataset
+df = pd.read_csv("GSS.csv")
 
-cleaned_gss = df.dropna()
-cleaned_gss["happy_numeric"] = cleaned_gss["happy"].,ap({"Not too happy":1,"Pretty happy":2,"Very happy":3})
+# Data Cleaning
+df_cleaned = df.dropna()
+df_cleaned["happy_numeric"] = df_cleaned["happy"].map({"Not too happy": 1, "Pretty happy": 2, "Very happy": 3})
 
-# Create scatter plot: Income vs. Happiness
-sns.scatterplot(x=cleaned_gss["realinc"], y=cleaned_gss["happy_numeric']
+# Histogram: Income Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(df_cleaned["realinc"], bins=30, kde=True)
+plt.title("Distribution of Real Family Income")
 plt.xlabel("Income (USD)")
-plt.ylabel("Happiness Level (1=Not too happy, 3=Very happy)")
+plt.ylabel("Frequency")
+plt.show()
+
+# Bar Chart: Happiness Level Distribution
+plt.figure(figsize=(8,5))
+sns.countplot(y=df_cleaned["happy"], order=df_cleaned["happy"].value_counts().index)
+plt.title("Happiness Level Distribution")
+plt.xlabel("Count")
+plt.ylabel("Happiness Level")
+plt.show()
+
+# Scatter Plot: Income vs. Happiness
+plt.figure(figsize=(8,5))
+sns.scatterplot(x=df_cleaned["realinc"], y=df_cleaned["happy_numeric"], alpha=0.3)
 plt.title("Income vs. Happiness")
+plt.xlabel("Real Family Income (USD)")
+plt.ylabel("Happiness Level (1=Not too happy, 3=Very happy)")
+plt.show()
+
+# Bar Chart: Political Views Distribution
+plt.figure(figsize=(8,5))
+sns.countplot(y=df_cleaned["polviews"], order=df_cleaned["polviews"].value_counts().index)
+plt.title("Distribution of Political Views")
+plt.xlabel("Count")
+plt.ylabel("Political Views")
+plt.show()
+
+# Bar Chart: Education Levels
+plt.figure(figsize=(8,5))
+sns.countplot(y=df_cleaned["educ"], order=df_cleaned["educ"].value_counts().index)
+plt.title("Distribution of Education Levels")
+plt.xlabel("Count")
+plt.ylabel("Education Level")
 plt.show()
