@@ -13,6 +13,3 @@ plt.xlabel("Income (USD)")
 plt.ylabel("Happiness Level (1=Not too happy, 3=Very happy)")
 plt.title("Income vs. Happiness")
 plt.show()
-git add .
-git commit -m "Added Jupyter Notebook with GSS analysis"
-git push origin main
